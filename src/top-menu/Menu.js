@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
-import './css/menu.css';
+import '../css/menu.scss';
+import ElementoMenuIzquierda from './ElementoMenuIzquierda.js';
+import ElementoMenuCentro from './ElementoMenuCentro.js';
+import ElementoMenuDerecha from './ElementoMenuDerecha.js';
 
 class Menu extends Component {
     constructor(props)
     {
         super(props);
-        this.state = { title : "Hello unchanged title" };
+        this.state = { title : "Hello unchanged title prueba" };
     }
 
     getClick()
@@ -17,6 +20,9 @@ class Menu extends Component {
         return (
             <div className="menu"
             onClick = {this.getClick.bind(this)}>
+                <ElementoMenuIzquierda/>
+                <ElementoMenuCentro/>
+                <ElementoMenuDerecha/>
                 {this.state.title} | {this.props.modifiedTitle}
             </div>
         );
